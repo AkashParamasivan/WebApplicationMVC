@@ -1,0 +1,61 @@
+﻿@model IEnumerable<WebApplicationMVC.Models.LoginDetails>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Read</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Register")
+    </p>
+    <h3> @TempData.Peek("welcome")</h3>
+    <h3> @TempData.Peek("Username")</h3>
+    <h3> @TempData.Peek("role")</h3>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Update", new { id = item.Username }) |
+                    @*@Html.ActionLink("Details", "Details", new { id=item.Username }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Username })
+                </td>
+            </tr>
+
+        }
+        
+    </table>
+
+
+</body>
+</html>

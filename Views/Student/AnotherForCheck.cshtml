@@ -1,0 +1,41 @@
+﻿@model WebApplicationMVC.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnotherForCheck</title>
+</head>
+<body>
+    <div>
+        <h1> Hello  </h1>
+
+    </div>
+    <div>
+        student name: @ViewData["Studentname"]
+    </div>
+    @*<div>
+
+            @foreach (var obj in (IEnumerable<int>)(ViewData["numbers"]))
+            {
+                <p>@obj</p>
+            }
+        </div>*@
+    <div>
+
+        @foreach (var obj in ViewBag.numbers)
+        {
+            <p>@obj</p>
+        }
+    </div>
+    <div>
+        <p>Student ID: @Model.Id</p>
+        <p>Student Name: @Model.Name</p>
+        <p>Student age:  @Model.Age</p>
+    </div>
+</body>
+</html>
